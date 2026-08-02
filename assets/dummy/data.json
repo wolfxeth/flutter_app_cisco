@@ -1,0 +1,26 @@
+{
+  "persona": "Network Engineer",
+  "userLocation": { "lat": 36.102, "lon": -115.174 },
+  "contacts": [
+    { "id": "c1", "name": "Priya Sharma", "title": "Director of Network Engineering", "company": "Acme Corp", "currentLocation": "L2, Breakers BH", "location": { "lat": 36.1025, "lon": -115.1735 } },
+    { "id": "c2", "name": "Jane Chen", "title": "Principal Architect", "company": "Cisco", "currentLocation": "L2, Mandalay Bay C", "location": { "lat": 36.1030, "lon": -115.1740 } },
+    { "id": "c3", "name": "Dr. Elena Vasquez", "title": "Security Solutions Architect", "company": "Cisco", "currentLocation": "L3, Jasmine AB", "location": { "lat": 36.1000, "lon": -115.1750 } }
+  ],
+  "sessions": [
+    { "id": "s1", "title": "BRKSEC-1842", "capacity": 100, "filled": 75, "location": { "lat": 36.102, "lon": -115.174 }, "startTime": "2026-08-02T16:00:00Z" }
+  ],
+  "notes": [
+    { "id": "n1", "title": "AI Datacenter Planning Sync", "body": "Reviewed AI infrastructure requirements including GPU fabric and Nexus reference designs for a 4-rack pilot.", "timestamp": "2026-08-02 15:37" },
+    { "id": "n2", "title": "Zero Trust Architecture Discussion", "body": "Discussed phased Zero Trust rollout starting with identity and device trust.", "timestamp": "2026-08-02 15:37" }
+  ],
+  "goals": [
+    { "id": "g1", "title": "Master Zero Trust architecture", "description": "Attend security breakouts and meet with Cisco Secure engineers to plan a ZTNA pilot.", "done": false },
+    { "id": "g2", "title": "Evaluate AI-ready datacenter designs", "description": "Compare Nexus Hyperfabric and UCS reference architectures for GPU workloads.", "done": false },
+    { "id": "g3", "title": "Connect with 5+ peer engineers", "description": "Network with campus and SP engineers facing similar automation challenges.", "done": false },
+    { "id": "g4", "title": "Build executive briefing deck", "description": "Gather ROI data and AI strategy talking points for leadership follow-up.", "done": false }
+  ],
+  "alerts": [
+    { "id": "a1", "title": "Priya Sharma is nearby", "message": "Attendee Director of Network Engineering at L2, Breakers BH (63m away). Set up a meeting on For You." },
+    { "id": "a2", "title": "Session filling up", "message": "BRKDCN-2034 is at 95% capacity" }
+  ]
+}
