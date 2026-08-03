@@ -68,5 +68,7 @@
 		</array>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>Cisco Live Notes uses your location to show sessions and rooms near you at the venue.</string>
 	</dict>
 </plist>

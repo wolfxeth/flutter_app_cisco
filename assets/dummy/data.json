@@ -2,25 +2,105 @@
   "persona": "Network Engineer",
   "userLocation": { "lat": 36.102, "lon": -115.174 },
   "contacts": [
-    { "id": "c1", "name": "Priya Sharma", "title": "Director of Network Engineering", "company": "Acme Corp", "currentLocation": "L2, Breakers BH", "location": { "lat": 36.1025, "lon": -115.1735 } },
-    { "id": "c2", "name": "Jane Chen", "title": "Principal Architect", "company": "Cisco", "currentLocation": "L2, Mandalay Bay C", "location": { "lat": 36.1030, "lon": -115.1740 } },
-    { "id": "c3", "name": "Dr. Elena Vasquez", "title": "Security Solutions Architect", "company": "Cisco", "currentLocation": "L3, Jasmine AB", "location": { "lat": 36.1000, "lon": -115.1750 } }
+    { "id": "c1", "name": "Jordan Kim",         "title": "VP of Infrastructure",        "company": "RetailScale", "badge": "Attendee",     "matchPercent": 99, "description": "Executive sponsor evaluating AI and security investments for retail expansion.", "alignmentText": "Currently near you in L2, Lagoon H",       "currentLocation": "L2, Lagoon H",       "location": { "lat": 36.1028, "lon": -115.1738 }, "distanceMeters": 35 },
+    { "id": "c2", "name": "Jane Chen",          "title": "Principal Architect",         "company": "Cisco",       "badge": "Cisco Expert", "matchPercent": 99, "description": "Designs AI-ready datacenter patterns with Nexus and UCS teams.",                 "alignmentText": "Currently near you in L2, Mandalay Bay C", "currentLocation": "L2, Mandalay Bay C", "location": { "lat": 36.1030, "lon": -115.1740 }, "distanceMeters": 0 },
+    { "id": "c3", "name": "Dr. Elena Vasquez",  "title": "Security Solutions Architect","company": "Cisco",       "badge": "Cisco Expert", "matchPercent": 99, "description": "Helps enterprises consolidate security stacks with Cisco XDR and Secure Firewall.","alignmentText": "Currently near you in L3, Jasmine AB",     "currentLocation": "L3, Jasmine AB",     "location": { "lat": 36.1000, "lon": -115.1750 }, "distanceMeters": 78 },
+    { "id": "c4", "name": "Marcus Webb",        "title": "Distinguished Engineer",      "company": "Cisco",       "badge": "Cisco Expert", "matchPercent": 94, "description": "Leads observability and telemetry strategy across Cisco networking platforms.",  "alignmentText": "Currently near you in L2, Breakers CI",    "currentLocation": "L2, Breakers CI",    "location": { "lat": 36.1024, "lon": -115.1736 }, "distanceMeters": 56 },
+    { "id": "c5", "name": "Priya Sharma",       "title": "Director of Network Engineering","company": "Acme Corp","badge": "Attendee",    "matchPercent": 91, "description": "Automating a 200-site campus refresh. Wants to meet other automation practitioners.","alignmentText": "Currently near you in L2, Breakers BH",  "currentLocation": "L2, Breakers BH",    "location": { "lat": 36.1025, "lon": -115.1735 }, "distanceMeters": 63 },
+    { "id": "c6", "name": "Amir Rahimi",        "title": "SecOps Manager",              "company": "FinTrust",    "badge": "Attendee",     "matchPercent": 88, "description": "Building SOC automation on top of Cisco XDR and Splunk.",                        "alignmentText": "Currently near you in L3, South Seas B",   "currentLocation": "L3, South Seas B",   "location": { "lat": 36.1005, "lon": -115.1748 }, "distanceMeters": 62 }
   ],
   "sessions": [
-    { "id": "s1", "title": "BRKSEC-1842", "capacity": 100, "filled": 75, "location": { "lat": 36.102, "lon": -115.174 }, "startTime": "2026-08-02T16:00:00Z" }
+    { "id": "BRKDCN-2034", "title": "AI-Ready Data Center Design Patterns",   "day": "Tuesday",  "time": "10:00", "room": "L2, Mandalay Bay C", "distanceMeters": 35, "matchPercent": 95, "description": "Explore reference architectures for AI infrastructure using Nexus and UCS.", "alignmentText": "Matches your Datacenter interest and DCN track history", "scheduled": true },
+    { "id": "BRKSEC-1842", "title": "Zero Trust Network Access Deep Dive",    "day": "Tuesday",  "time": "11:00", "room": "L3, South Seas A",   "distanceMeters": 56, "matchPercent": 87, "description": "Implement ZTNA with Cisco Secure Access and Duo integration.",              "alignmentText": "Matches your Security interest and SEC track history",  "scheduled": true },
+    { "id": "BRKENT-3102", "title": "Campus Automation with Catalyst Center","day": "Tuesday",  "time": "14:00", "room": "L2, Breakers BH",    "distanceMeters": 52, "matchPercent": 79, "description": "Automate campus network operations using Catalyst Center workflows.",       "alignmentText": "Matches your Enterprise Networks interest and ENT track history", "scheduled": true },
+    { "id": "BRKCSP-2201", "title": "Cloud Security Posture Management",     "day": "Tuesday",  "time": "15:00", "room": "L3, Jasmine AB",     "distanceMeters": 92, "matchPercent": 71, "description": "Secure multi-cloud workloads with Cisco Cloud Protection Suite.",           "alignmentText": "Matches your Cloud interest and CSP track history",     "scheduled": false },
+    { "id": "TECDC-1500",  "title": "ACI Troubleshooting Masterclass",       "day": "Wednesday","time": "09:00", "room": "L2, Lagoon H",       "distanceMeters": 49, "matchPercent": 63, "description": "Hands-on technical seminar for ACI fabric troubleshooting.",                "alignmentText": "Matches your Datacenter interest",                     "scheduled": false },
+    { "id": "BRKENT-3200", "title": "SD-WAN Migration Best Practices",       "day": "Wednesday","time": "11:00", "room": "L2, Breakers CI",    "distanceMeters": 56, "matchPercent": 68, "description": "Battle-tested migration patterns from MPLS to SD-WAN.",                     "alignmentText": "Matches your Enterprise Networks interest",             "scheduled": false },
+    { "id": "BRKGEN-1001", "title": "Cisco AI Strategy for Enterprise Leaders","day": "Tuesday","time": "16:00", "room": "L2, Reef",           "distanceMeters": 63, "matchPercent": 82, "description": "Executive-level view of Cisco's AI portfolio and go-to-market.",             "alignmentText": "Matches your Strategy interest",                        "scheduled": false },
+    { "id": "BRKDCN-2500", "title": "Nexus Hyperfabric Deep Dive",           "day": "Wednesday","time": "15:00", "room": "L2, Mandalay Bay D", "distanceMeters": 40, "matchPercent": 90, "description": "New Hyperfabric switching platform for AI clusters.",                       "alignmentText": "Matches your Datacenter interest",                     "scheduled": false },
+    { "id": "BRKDCN-3000", "title": "Data Center Fabric Design",             "day": "Thursday", "time": "10:00", "room": "L2, Mandalay Bay E", "distanceMeters": 44, "matchPercent": 74, "description": "Modern fabric design for AI, storage, and traditional workloads.",           "alignmentText": "Matches your Datacenter interest",                     "scheduled": false },
+    { "id": "BRKENT-2800", "title": "Wi-Fi 7 Design for Enterprise",         "day": "Wednesday","time": "16:00", "room": "L2, Breakers BH",    "distanceMeters": 52, "matchPercent": 66, "description": "Design guidance for high-density Wi-Fi 7 deployments.",                      "alignmentText": "Matches your Enterprise Networks interest",             "scheduled": false },
+    { "id": "BRKSEC-2100", "title": "Modern SOC Automation",                 "day": "Tuesday",  "time": "14:00", "room": "L3, South Seas B",   "distanceMeters": 62, "matchPercent": 72, "description": "Automate detection and response with Cisco XDR playbooks.",                  "alignmentText": "Matches your Security interest",                       "scheduled": false },
+    { "id": "BRKCLD-2200", "title": "Cloud Networking Deep Dive",            "day": "Thursday", "time": "09:00", "room": "L3, Jasmine AB",     "distanceMeters": 92, "matchPercent": 69, "description": "Extending fabric visibility into AWS, Azure, and GCP.",                      "alignmentText": "Matches your Cloud interest",                          "scheduled": false },
+    { "id": "BRKCOL-1500", "title": "Collaboration in the AI Era",           "day": "Thursday", "time": "11:00", "room": "L3, Palm A",         "distanceMeters": 105,"matchPercent": 58, "description": "Webex Suite, AI Assistant, and hybrid meeting rooms.",                        "alignmentText": "Matches your Collaboration interest",                   "scheduled": false }
+  ],
+  "rooms": [
+    "L2, Mandalay Bay C",
+    "L2, Mandalay Bay D",
+    "L2, Mandalay Bay E",
+    "L2, Breakers BH",
+    "L2, Breakers CI",
+    "L2, Lagoon H",
+    "L2, Reef",
+    "L2, Surf AB",
+    "L3, South Seas A",
+    "L3, South Seas B",
+    "L3, Jasmine AB",
+    "L3, Palm A"
   ],
   "notes": [
-    { "id": "n1", "title": "AI Datacenter Planning Sync", "body": "Reviewed AI infrastructure requirements including GPU fabric and Nexus reference designs for a 4-rack pilot.", "timestamp": "2026-08-02 15:37" },
-    { "id": "n2", "title": "Zero Trust Architecture Discussion", "body": "Discussed phased Zero Trust rollout starting with identity and device trust.", "timestamp": "2026-08-02 15:37" }
+    { "id": "n1", "title": "AI Datacenter Planning Sync",       "body": "Reviewed AI infrastructure requirements including GPU fabric, cooling, and Nexus Hyperfabric reference designs for a 4-rack pilot.", "timestamp": "2026-08-02T15:37:00", "linkedSessionId": "BRKDCN-2034", "participants": ["c2","c4"] },
+    { "id": "n2", "title": "Zero Trust Architecture Discussion","body": "Discussed phased Zero Trust rollout starting with identity and device trust. Agreed to pilot Cisco Secure Access in two branch offices before Q3.",                  "timestamp": "2026-08-02T15:37:00", "linkedSessionId": "BRKSEC-1842", "participants": ["c3","c6"] }
   ],
-  "goals": [
-    { "id": "g1", "title": "Master Zero Trust architecture", "description": "Attend security breakouts and meet with Cisco Secure engineers to plan a ZTNA pilot.", "done": false },
-    { "id": "g2", "title": "Evaluate AI-ready datacenter designs", "description": "Compare Nexus Hyperfabric and UCS reference architectures for GPU workloads.", "done": false },
-    { "id": "g3", "title": "Connect with 5+ peer engineers", "description": "Network with campus and SP engineers facing similar automation challenges.", "done": false },
-    { "id": "g4", "title": "Build executive briefing deck", "description": "Gather ROI data and AI strategy talking points for leadership follow-up.", "done": false }
+  "savedContacts": [
+    { "id": "sc1", "name": "Alex Rivera",   "title": "Cloud Security Lead",          "company": "CloudFirst Inc." },
+    { "id": "sc2", "name": "Lisa Park",     "title": "SOC Manager",                  "company": "SecureNet" },
+    { "id": "sc3", "name": "Priya Sharma",  "title": "Director of Network Engineering","company": "Acme Corp" },
+    { "id": "sc4", "name": "Tom Nguyen",    "title": "SP Architect",                 "company": "Telco Global" }
   ],
+  "personas": [
+    { "id": "network_engineer",  "name": "Network Engineer",  "subtitle": "Infrastructure & Operations" },
+    { "id": "security_architect","name": "Security Architect","subtitle": "Security & Compliance" },
+    { "id": "cloud_architect",   "name": "Cloud Architect",   "subtitle": "Cloud & Multicloud" },
+    { "id": "executive_sponsor", "name": "Executive Sponsor", "subtitle": "Leadership & Strategy" }
+  ],
+  "goalsByPersona": {
+    "network_engineer": [
+      { "id": "ne1", "title": "Master Zero Trust architecture",       "description": "Attend security breakouts and meet with Cisco Secure engineers to plan a ZTNA pilot.",       "category": "Learning",       "priority": "High",   "technologies": ["ZTNA","Duo","Secure Access"], "done": false },
+      { "id": "ne2", "title": "Evaluate AI-ready datacenter designs", "description": "Compare Nexus Hyperfabric and UCS reference architectures for GPU workloads.",              "category": "Learning",       "priority": "High",   "technologies": ["Nexus","UCS","GPU"],          "done": false },
+      { "id": "ne3", "title": "Connect with 5+ peer engineers",       "description": "Network with campus and SP engineers facing similar automation challenges.",                  "category": "Networking",     "priority": "Medium", "technologies": ["Automation","IaC"],           "done": false },
+      { "id": "ne4", "title": "Build executive briefing deck",        "description": "Gather ROI data and AI strategy talking points for leadership follow-up.",                    "category": "Planning",       "priority": "Medium", "technologies": ["ROI","AI"],                   "done": false }
+    ],
+    "security_architect": [
+      { "id": "sa1", "title": "Deep dive Zero Trust segmentation",    "description": "Understand identity, device, and workload trust for a phased ZTNA rollout.",                   "category": "Learning",       "priority": "High",   "technologies": ["ZTNA","Identity","Secure Workload"], "done": false },
+      { "id": "sa2", "title": "Evaluate XDR platforms",               "description": "Compare Cisco XDR with existing SIEM/SOAR stack for correlated detections.",                    "category": "Vendor Meeting", "priority": "High",   "technologies": ["XDR","SOC","SIEM"],                  "done": false },
+      { "id": "sa3", "title": "Attend Talos threat briefing",         "description": "Get the latest threat landscape and IOCs relevant to our industry vertical.",                   "category": "Learning",       "priority": "Medium", "technologies": ["Talos","Threat Intel"],              "done": false },
+      { "id": "sa4", "title": "Draft security ROI report",            "description": "Prepare board-ready ROI narrative for the ZTNA and XDR investments.",                          "category": "Planning",       "priority": "Medium", "technologies": ["ROI","Reporting"],                   "done": false }
+    ],
+    "cloud_architect": [
+      { "id": "ca1", "title": "Compare multi-cloud fabric options",   "description": "Evaluate Cisco Multicloud Defense and Hyperfabric across AWS, Azure, and GCP.",                "category": "Learning",       "priority": "High",   "technologies": ["Multicloud","Hyperfabric","AWS","Azure"], "done": false },
+      { "id": "ca2", "title": "Assess hybrid Kubernetes patterns",    "description": "Look at Intersight Kubernetes Service and Isovalent for hybrid workload placement.",           "category": "Learning",       "priority": "High",   "technologies": ["Kubernetes","Isovalent","Intersight"],   "done": false },
+      { "id": "ca3", "title": "Meet with Cisco Cloud PMs",            "description": "Get roadmap alignment on multicloud networking and security services.",                        "category": "Vendor Meeting", "priority": "Medium", "technologies": ["Roadmap"],                               "done": false },
+      { "id": "ca4", "title": "Map cost-optimization playbook",       "description": "Bring back a playbook for FinOps + Cisco Intersight cost governance.",                          "category": "Planning",       "priority": "Medium", "technologies": ["FinOps","Intersight"],                   "done": false }
+    ],
+    "executive_sponsor": [
+      { "id": "es1", "title": "Align on AI strategy narrative",       "description": "Refine the AI-ready infrastructure story to bring back to the executive team.",                 "category": "Strategy",       "priority": "High",   "technologies": ["AI","Strategy"],              "done": false },
+      { "id": "es2", "title": "Meet 5+ industry peers",               "description": "Build a peer network of CIOs / VPs facing similar transformation pressure.",                    "category": "Networking",     "priority": "High",   "technologies": ["Peer Network"],               "done": false },
+      { "id": "es3", "title": "Attend Chuck Robbins keynote",         "description": "Capture headline announcements and align them with our roadmap.",                                "category": "Learning",       "priority": "Medium", "technologies": ["Keynote"],                    "done": false },
+      { "id": "es4", "title": "Prepare Board debrief",                "description": "Distill the top 3 strategic bets to present to the Board next month.",                          "category": "Planning",       "priority": "Medium", "technologies": ["Board","Debrief"],            "done": false }
+    ]
+  },
   "alerts": [
     { "id": "a1", "title": "Priya Sharma is nearby", "message": "Attendee Director of Network Engineering at L2, Breakers BH (63m away). Set up a meeting on For You." },
     { "id": "a2", "title": "Session filling up", "message": "BRKDCN-2034 is at 95% capacity" }
+  ],
+  "webexTopics": ["All topics", "Security", "AI Infrastructure", "Automation", "Collaboration"],
+  "channels": [
+    { "id": "ch1",  "title": "AI Infrastructure Builders",   "sponsor": "Sponsored by Cisco Compute · Webex",    "topic": "AI Infrastructure", "description": "GPU fabric design, Nexus Hyperfabric, and UCS sizing for inference workloads — sponsored collaboration space.", "members": 196, "activeThreads": 1, "matchPercent": 83, "alignmentText": "Aligned with your ai infrastructure goals" },
+    { "id": "ch2",  "title": "Zero Trust & SASE Lounge",     "sponsor": "Sponsored by Cisco Secure · Webex",     "topic": "Security",          "description": "Discuss ZTNA pilots, identity-aware segmentation, and Cisco Secure Access rollouts with peers and Cisco experts.", "members": 284, "activeThreads": 2, "matchPercent": 75, "alignmentText": "Aligned with your security goals" },
+    { "id": "ch3",  "title": "Campus Automation Hub",         "sponsor": "Sponsored by Cisco Networking · Webex", "topic": "Automation",        "description": "Share Catalyst Center workflows, Meraki templates, and cross-domain automation patterns with fellow operators.", "members": 312, "activeThreads": 1, "matchPercent": 75, "alignmentText": "Aligned with your automation goals" },
+    { "id": "ch4",  "title": "NetDevOps Practitioners",       "sponsor": "Sponsored by Cisco DevNet · Webex",      "topic": "Automation",        "description": "CI/CD for networks, GitOps for switches, and language patterns with pyATS + Ansible.", "members": 264, "activeThreads": 3, "matchPercent": 74, "alignmentText": "Aligned with your automation goals" },
+    { "id": "ch5",  "title": "MLOps on Cisco UCS",            "sponsor": "Sponsored by Cisco Compute · Webex",    "topic": "AI Infrastructure", "description": "Reference patterns for MLOps pipelines running on UCS X-Series and Intersight.", "members": 174, "activeThreads": 1, "matchPercent": 73, "alignmentText": "Aligned with your ai infrastructure goals" },
+    { "id": "ch6",  "title": "Cloud Security Practitioners",  "sponsor": "Sponsored by Cisco Multicloud Defense · Webex", "topic": "Security",   "description": "Multi-cloud posture, workload protection, and Cisco Cloud Protection Suite tips.", "members": 208, "activeThreads": 2, "matchPercent": 72, "alignmentText": "Aligned with your security goals" },
+    { "id": "ch7",  "title": "SOC Automation Guild",          "sponsor": "Sponsored by Cisco XDR · Webex",         "topic": "Security",          "description": "Trade playbooks and detections across Cisco XDR, Splunk, and Talos threat intelligence.", "members": 221, "activeThreads": 2, "matchPercent": 71, "alignmentText": "Aligned with your security goals" },
+    { "id": "ch8",  "title": "GPU Storage Networking Forum",  "sponsor": "Sponsored by Cisco Nexus · Webex",       "topic": "AI Infrastructure", "description": "Discussion on RoCE, storage fabric design, and low-latency patterns for AI clusters.", "members": 158, "activeThreads": 1, "matchPercent": 70, "alignmentText": "Aligned with your ai infrastructure goals" },
+    { "id": "ch9",  "title": "Meraki Automation Circle",      "sponsor": "Sponsored by Cisco Meraki · Webex",      "topic": "Automation",        "description": "Templates, dashboards, and API-first branch automation stories from Meraki operators.", "members": 302, "activeThreads": 2, "matchPercent": 68, "alignmentText": "Aligned with your automation goals" },
+    { "id": "ch10", "title": "Talos Intel Community",         "sponsor": "Sponsored by Cisco Talos · Webex",       "topic": "Security",          "description": "IOC exchange, weekly threat briefings, and dissections of major campaigns.", "members": 411, "activeThreads": 4, "matchPercent": 66, "alignmentText": "Aligned with your security goals" },
+    { "id": "ch11", "title": "AIOps for Networks",            "sponsor": "Sponsored by Cisco ThousandEyes · Webex","topic": "AI Infrastructure", "description": "Applying LLMs and anomaly detection to network telemetry and incident response.", "members": 189, "activeThreads": 2, "matchPercent": 64, "alignmentText": "Aligned with your ai infrastructure goals" },
+    { "id": "ch12", "title": "Terraform on Cisco Circle",     "sponsor": "Sponsored by Cisco DevNet · Webex",      "topic": "Automation",        "description": "Providers, modules, and stateful automation across Nexus, Meraki, and Intersight.", "members": 176, "activeThreads": 1, "matchPercent": 62, "alignmentText": "Aligned with your automation goals" },
+    { "id": "ch13", "title": "AI Assistant Builders",         "sponsor": "Sponsored by Webex AI · Webex",          "topic": "Collaboration",     "description": "Building AI Assistant workflows, custom skills, and integrations for Webex Suite.", "members": 233, "activeThreads": 3, "matchPercent": 61, "alignmentText": "Aligned with your collaboration goals" },
+    { "id": "ch14", "title": "Hybrid Meeting Rooms Guild",    "sponsor": "Sponsored by Webex Devices · Webex",     "topic": "Collaboration",     "description": "Room designs, RoomOS tips, and hardware showcases for the hybrid workplace.", "members": 189, "activeThreads": 2, "matchPercent": 52, "alignmentText": "Aligned with your collaboration goals" },
+    { "id": "ch15", "title": "Contact Center Innovators",     "sponsor": "Sponsored by Webex Contact Center",      "topic": "Collaboration",     "description": "Journey orchestration, AI-powered CX, and Webex Contact Center best practices.", "members": 141, "activeThreads": 1, "matchPercent": 48, "alignmentText": "Aligned with your collaboration goals" },
+    { "id": "ch16", "title": "Webex Collaboration Circle",    "sponsor": "Sponsored by Webex",                     "topic": "Collaboration",     "description": "Webex Suite, AI Assistant, and hybrid meeting room experiences — connect with collaboration architects.", "members": 148, "activeThreads": 3, "matchPercent": 45, "alignmentText": "Popular sponsored space at Cisco Live" }
   ]
 }

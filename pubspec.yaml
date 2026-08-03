@@ -32,6 +32,7 @@ dependencies:
     sdk: flutter
 
   http: ^0.13.6
+  geolocator: ^13.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -77,6 +78,13 @@ flutter_native_splash:
   android: true
   ios: true
   web: false
+  # Android 12+ mandates the SplashScreen API: only a centered icon + color
+  # is rendered by the OS. The full-screen splash below is shown afterwards
+  # by lib/screens/welcome_screen.dart.
+  android_12:
+    image: assets/icons/app_icon.png
+    color: "#031A33"
+    icon_background_color: "#031A33"
 
 # To add assets to your application, add an assets section, like this:
   # assets:
