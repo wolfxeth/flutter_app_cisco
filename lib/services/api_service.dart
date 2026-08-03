@@ -28,8 +28,13 @@ class ApiException implements Exception {
 /// reference [ApiService.instance] — the concrete implementation (dummy vs
 /// HTTP) is chosen by [AppConfig.useDummyData].
 abstract class ApiService {
-  static final ApiService instance =
-      AppConfig.useDummyData ? _DummyApiService() : _HttpApiService();
+  static final _DummyApiService _dummy = _DummyApiService();
+  static final _HttpApiService _http = _HttpApiService();
+
+  /// Resolves the active implementation on every access based on the current
+  /// runtime toggle, so flipping [AppConfig.useDummy] takes effect immediately.
+  static ApiService get instance =>
+      AppConfig.useDummy.value ? _dummy : _http;
 
   // Persona / goals
   Future<String> getPersona();
@@ -415,9 +420,7 @@ class _HttpApiService implements ApiService {
     final base = Uri.parse(AppConfig.apiBaseUrl);
     return base.replace(
       path: (base.path + path).replaceAll('//', '/'),
-      queryParameters: query == null
-          ? null
-          : query.map((k, v) => MapEntry(k, v?.toString() ?? '')),
+      queryParameters: query?.map((k, v) => MapEntry(k, v?.toString() ?? '')),
     );
   }
 
