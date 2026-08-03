@@ -39,12 +39,13 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cisco Events - Notes',
+      title: 'Cisco Live Notes',
       theme: AppTheme.light(),
       home: Scaffold(
         appBar: AppBar(
           surfaceTintColor: Colors.transparent,
           shadowColor: Colors.transparent,
+          toolbarHeight: 100,
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(colors: [AppTheme.headerBg, Color(0xFF0D1F34)]),
