@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'config.dart';
 import 'screens/welcome_screen.dart';
 import 'theme.dart';
 
-void main() => runApp(const NotesApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppConfig.load();
+  runApp(const NotesApp());
+}
 
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});

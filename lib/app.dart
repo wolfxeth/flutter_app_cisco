@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'config.dart';
 import 'screens/goals_screen.dart';
 import 'screens/for_you_screen.dart';
 import 'screens/webex_screen.dart';
@@ -7,6 +8,7 @@ import 'screens/notes_screen.dart';
 import 'screens/alerts_screen.dart';
 import 'screens/insights_screen.dart';
 import 'widgets/bottom_nav.dart';
+import 'widgets/data_source_sheet.dart';
 
 import 'theme.dart';
 
@@ -20,15 +22,45 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   int _selectedIndex = 0;
 
-  late final List<Widget> _screens = <Widget>[
-    const GoalsScreen(),
-    ForYouScreen(onOpenWebex: () => _onItemTapped(2)),
-    const WebexScreen(),
-    const NearbyScreen(),
-    const NotesScreen(),
-    const AlertsScreen(),
-    const InsightsScreen(),
-  ];
+  /// Bumped whenever the data source changes so the visible screen rebuilds
+  /// from scratch and re-fetches against the new source.
+  int _reloadToken = 0;
+
+  late List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _buildScreens();
+    AppConfig.useDummy.addListener(_onDataSourceChanged);
+    AppConfig.baseUrl.addListener(_onDataSourceChanged);
+  }
+
+  @override
+  void dispose() {
+    AppConfig.useDummy.removeListener(_onDataSourceChanged);
+    AppConfig.baseUrl.removeListener(_onDataSourceChanged);
+    super.dispose();
+  }
+
+  void _buildScreens() {
+    _screens = <Widget>[
+      const GoalsScreen(),
+      ForYouScreen(onOpenWebex: () => _onItemTapped(2)),
+      const WebexScreen(),
+      const NearbyScreen(),
+      const NotesScreen(),
+      const AlertsScreen(),
+      const InsightsScreen(),
+    ];
+  }
+
+  void _onDataSourceChanged() {
+    setState(() {
+      _reloadToken++;
+      _buildScreens();
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -41,7 +73,10 @@ class _AppState extends State<App> {
     return Scaffold(
       extendBody: true,
       appBar: const _AppHeader(),
-      body: _screens[_selectedIndex],
+      body: KeyedSubtree(
+        key: ValueKey(_reloadToken),
+        child: _screens[_selectedIndex],
+      ),
       bottomNavigationBar:
           BottomNav(selectedIndex: _selectedIndex, onTap: _onItemTapped),
     );
@@ -74,6 +109,8 @@ class _AppHeader extends StatelessWidget implements PreferredSizeWidget {
                     const SizedBox(width: 12),
                     if (!compact) const _EventTag(),
                     const Spacer(),
+                    const _DataSourceButton(),
+                    const SizedBox(width: 8),
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.end,
@@ -112,9 +149,57 @@ class _AppHeader extends StatelessWidget implements PreferredSizeWidget {
   }
 }
 
+class _DataSourceButton extends StatelessWidget {
+  const _DataSourceButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: AppConfig.useDummy,
+      builder: (context, useDummy, _) {
+        final label = useDummy ? 'DEMO' : 'LIVE';
+        final color = useDummy ? Colors.white70 : AppTheme.accent;
+        return InkWell(
+          onTap: () => showDataSourceSheet(context),
+          borderRadius: BorderRadius.circular(8),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: color.withValues(alpha: 0.5)),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 6,
+                  height: 6,
+                  decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+                ),
+                const SizedBox(width: 6),
+                Text(
+                  label,
+                  style: TextStyle(
+                    color: color,
+                    fontSize: 10,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                const SizedBox(width: 4),
+                Icon(Icons.settings, size: 13, color: color),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
 class _CiscoLiveWordmark extends StatelessWidget {
   const _CiscoLiveWordmark();
-
   @override
   Widget build(BuildContext context) {
     return Column(
