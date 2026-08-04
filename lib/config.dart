@@ -15,12 +15,12 @@ class AppConfig {
 
   static const String _defaultBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://10.0.2.2:8080',
+    defaultValue: 'https://feb-ciscolive-concierge-755498942514.us-west1.run.app',
   );
 
   static const bool _defaultUseDummy = bool.fromEnvironment(
     'USE_DUMMY',
-    defaultValue: true,
+    defaultValue: false,
   );
 
   static const String _kUseDummy = 'use_dummy_data';
