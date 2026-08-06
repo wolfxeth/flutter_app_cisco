@@ -450,9 +450,13 @@ class _HttpApiService implements ApiService {
       _send(() => _client.delete(_u(path), headers: _headers));
 
   Future<dynamic> _send(Future<http.Response> Function() req) async {
-    final http.Response res;
+    http.Response res;
     try {
       res = await req().timeout(const Duration(seconds: 15));
+      if (res.statusCode == 401 && AppConfig.onUnauthorized != null) {
+        final refreshed = await AppConfig.onUnauthorized!();
+        if (refreshed) res = await req().timeout(const Duration(seconds: 15));
+      }
     } on TimeoutException {
       throw ApiException(0, 'Request timed out');
     } catch (e) {

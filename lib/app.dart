@@ -9,6 +9,7 @@ import 'screens/alerts_screen.dart';
 import 'screens/insights_screen.dart';
 import 'widgets/bottom_nav.dart';
 import 'widgets/data_source_sheet.dart';
+import 'services/auth_service.dart';
 
 import 'theme.dart';
 
@@ -110,24 +111,14 @@ class _AppHeader extends StatelessWidget implements PreferredSizeWidget {
                     if (!compact) const _EventTag(),
                     const Spacer(),
                     const _DataSourceButton(),
-                    const SizedBox(width: 8),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'Cisco Live Las Vegas 2026',
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: -0.2,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        _PersonaBadge(),
-                      ],
+                    const SizedBox(width: 10),
+                    const _PersonaBadge(),
+                    const SizedBox(width: 4),
+                    IconButton(
+                      tooltip: 'Sign out',
+                      visualDensity: VisualDensity.compact,
+                      icon: const Icon(Icons.logout, color: Colors.white70),
+                      onPressed: () => AuthService.instance.signOut(),
                     ),
                   ],
                 ),

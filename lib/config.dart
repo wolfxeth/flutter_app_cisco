@@ -65,4 +65,7 @@ class AppConfig {
 
   /// Bearer token attached to every outbound request. Set after login.
   static String? authToken;
+
+  /// Invoked on a 401 to force a token refresh. Returns true if a fresh token was set.
+  static Future<bool> Function()? onUnauthorized;
 }
