@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755498942514",
+    "project_id": "eloquent-hour-445710-s0",
+    "storage_bucket": "eloquent-hour-445710-s0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755498942514:android:afaa0db76329c52060fc2b",
+        "android_client_info": {
+          "package_name": "com.example.notes_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755498942514-5r7dpocji9ta7jhe3s6jnvspc2o7p59k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6TYz-NOlWfc-BMcChAgp0KH-Y71ozneA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755498942514-5r7dpocji9ta7jhe3s6jnvspc2o7p59k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
